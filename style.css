@@ -1,0 +1,115 @@
+/* Custom Scrollbar for Category Nav */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+}
+
+/* Carousel Animation */
+.banner-slide {
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cart Drawer Animation */
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-left {
+    animation: slideLeft 0.3s ease-out forwards;
+}
+
+/* =================================
+   BELLISSIMO PIZZA RESPONSIVE FIX
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    main,
+    header,
+    footer {
+        max-width: 100%;
+    }
+
+    .max-w-7xl,
+    .max-w-6xl,
+    .max-w-5xl {
+        max-width: 100%;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .modal-backdrop {
+        padding: 12px;
+    }
+
+    .modal-backdrop > div {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90dvh;
+        overflow-y: auto;
+    }
+
+    #cartDrawer {
+        width: min(100%, 420px);
+        max-width: 100%;
+        height: 100dvh;
+    }
+
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .modal-backdrop {
+        padding: 8px;
+    }
+
+    .modal-backdrop > div {
+        border-radius: 16px;
+    }
+
+    #cartDrawer {
+        width: 100%;
+    }
+}
